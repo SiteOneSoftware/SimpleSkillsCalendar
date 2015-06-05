@@ -4,16 +4,19 @@
     <h1>Calendar</h1>
     <telerik:RadAjaxManager runat="server" ID="AjaxManager" DefaultLoadingPanelID="LoadingPanel">
         <AjaxSettings>
-            <telerik:AjaxSetting AjaxControlID="RadScheduler1">
+            <telerik:AjaxSetting AjaxControlID="pnlAll">
                 <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="RadScheduler1" UpdatePanelCssClass="" />
+                    <telerik:AjaxUpdatedControl ControlID="pnlAll" UpdatePanelCssClass="" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
         </AjaxSettings>
     </telerik:RadAjaxManager>
     <telerik:RadAjaxLoadingPanel runat="server" ID="LoadingPanel"></telerik:RadAjaxLoadingPanel>
-    <telerik:RadScheduler ID="RadScheduler1" runat="server" Height="1024px" DataEndField="EndTime" DataKeyField="Id" DataSourceID="dsAppointments" DataStartField="StartTime" DataSubjectField="Subject">
-    </telerik:RadScheduler>
+    <asp:Panel ID="pnlAll" runat="server">
+        <telerik:RadScheduler ID="RadScheduler1" runat="server" Height="1024px" DataEndField="EndTime" DataKeyField="Id" DataSourceID="dsAppointments" DataStartField="StartTime" DataSubjectField="Subject" SelectedView="WeekView">
+        </telerik:RadScheduler>
+    </asp:Panel>
+
     <asp:SqlDataSource ID="dsAppointments" runat="server" ConnectionString="<%$ ConnectionStrings:CalSpikeConnectionString %>" DeleteCommand="DELETE FROM [Appointment] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Appointment] ([Subject], [ClaimId], [StartTime], [EndTime], [IsFulfilled]) VALUES (@Subject, @ClaimId, @StartTime, @EndTime, @IsFulfilled)" SelectCommand="SELECT * FROM [Appointment]" UpdateCommand="UPDATE [Appointment] SET [Subject] = @Subject, [ClaimId] = @ClaimId, [StartTime] = @StartTime, [EndTime] = @EndTime, [IsFulfilled] = @IsFulfilled WHERE [Id] = @Id">
         <DeleteParameters>
             <asp:Parameter Name="Id" Type="Int32" />

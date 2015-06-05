@@ -10,7 +10,25 @@
 namespace CalSpike {
     
     
-    public partial class Calendar01 {
+    public partial class PersonCalendar {
+        
+        /// <summary>
+        /// rcbPerson control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadComboBox rcbPerson;
+        
+        /// <summary>
+        /// dsPerson control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsPerson;
         
         /// <summary>
         /// AjaxManager control.
@@ -49,12 +67,12 @@ namespace CalSpike {
         protected global::Telerik.Web.UI.RadScheduler RadScheduler1;
         
         /// <summary>
-        /// dsAppointments control.
+        /// dsAvailability control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsAppointments;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsAvailability;
     }
 }
